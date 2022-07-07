@@ -7,6 +7,8 @@ Các bước cần làm khi Code 1 Pattern cho Game:
    + Tên Pattern, tên người làm, tính năng được sử dụng Pattern
    + Nội dung chi tiết việt sử dụng Pattern như thế nào
  - Update README: liệt kê Pattern ra ở phần bên dưới
+ 
+ ########################################################################################
 
 # PRU221m_Project
 FarmVille - FVille
