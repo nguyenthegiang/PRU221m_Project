@@ -8,13 +8,13 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     //Different Sprites for each state to use
-    public Sprite MoveUpSprite { get; set; }
-    public Sprite MoveDownSprite { get; set; }
-    public Sprite MoveLeftSprite { get; set; }
-    public Sprite MoveRightSprite { get; set; }
+    public Sprite MoveUpSprite;
+    public Sprite MoveDownSprite;
+    public Sprite MoveLeftSprite;
+    public Sprite MoveRightSprite;
 
     //for States to change Sprite of GameObject
-    public SpriteRenderer SpriteRenderer { get; set; }
+    public SpriteRenderer SpriteRenderer;
 
     // states of movement
     private IMoveState _moveDownState, _moveUpState, _moveLeftState, _moveRightState;

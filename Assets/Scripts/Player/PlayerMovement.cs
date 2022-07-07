@@ -13,9 +13,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public float Speed = 10f;
 
+    //movementController for controlling Animation Transition of Character (using State Design Pattern)
+    private MoveController _moveController;
+
     // Start is called before the first frame update
     void Start()
     {
+        //instantiate movement controller
+        _moveController = GetComponent<MoveController>();
     }
 
     // Update is called once per frame
@@ -24,6 +29,23 @@ public class PlayerMovement : MonoBehaviour
         //get input movement
         verticalMove = Input.GetAxisRaw("Vertical");
         horizontalMove = Input.GetAxisRaw("Horizontal");
+
+        //change Animation following move Direction (using Controller - State Design Pattern)
+        if (verticalMove > 0)
+        {
+            _moveController.MoveUpAnimation();
+        } else if (verticalMove < 0)
+        {
+            _moveController.MoveDownAnimation();
+        }
+        if (horizontalMove > 0)
+        {
+            _moveController.MoveRightAnimation();
+        } else if (horizontalMove < 0)
+        {
+            _moveController.MoveLeftAnimation();
+        }
+        
     }
 
     private void FixedUpdate()

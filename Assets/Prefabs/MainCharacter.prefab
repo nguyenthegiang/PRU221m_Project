@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4396147591147947792}
   - component: {fileID: 4396147591147947799}
   - component: {fileID: -8053639144355497110}
+  - component: {fileID: -5635563900090314560}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -148,3 +149,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4396147591147947792}
   Speed: 5
+--- !u!114 &-5635563900090314560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396147591147947796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36042accc1d04941a81a346a3afb40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveUpSprite: {fileID: 9211935381645682296, guid: 06561e88d85b0504baaf191ef7bf438b, type: 3}
+  MoveDownSprite: {fileID: 3918820789606917171, guid: adc05c80f87de6f429ad058701c66cfd, type: 3}
+  MoveLeftSprite: {fileID: -2765409072087481708, guid: 842c796b52be829478c38fe8cc7b712c, type: 3}
+  MoveRightSprite: {fileID: -1207745139347562704, guid: 842c796b52be829478c38fe8cc7b712c, type: 3}
+  SpriteRenderer: {fileID: 4396147591147947797}
