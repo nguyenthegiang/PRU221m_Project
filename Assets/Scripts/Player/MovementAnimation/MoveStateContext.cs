@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
+/// [State Design Pattern]
 /// Context class, use to get current state and change state
 /// </summary>
 class MoveStateContext

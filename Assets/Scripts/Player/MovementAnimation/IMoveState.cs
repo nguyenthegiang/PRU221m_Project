@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
+/// [State Deisgn Pattern]
 /// General interface for all movement states, must be implemented by all movement states
 /// </summary>
 public interface IMoveState

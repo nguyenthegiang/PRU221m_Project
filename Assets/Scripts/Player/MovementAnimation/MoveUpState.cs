@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//1 state of a movement
+/// <summary>
+/// [State Design Pattern]
+/// 1 state of a movement
+/// </summary>
 public class MoveUpState : MonoBehaviour, IMoveState
 {
     // to access variables of main character and make changes to it

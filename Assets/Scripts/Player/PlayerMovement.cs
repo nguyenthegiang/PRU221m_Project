@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// [State Design Pattern - Client]
+/// Define Movement of Main Character
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     //for movement
