@@ -214,6 +214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8053639144355497110, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
+      propertyPath: newsprite
+      value: 
+      objectReference: {fileID: 3918820789606917171, guid: adc05c80f87de6f429ad058701c66cfd, type: 3}
     - target: {fileID: 4396147591147947796, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
       propertyPath: m_Name
       value: MainCharacter

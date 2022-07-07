@@ -13,5 +13,5 @@ public interface IMoveState
     /// Handle method for all states, gets called when change to new state. Pass in controller to make changes to bike
     /// </summary>
     /// <param name="controller">the controller for main character object</param>
-    void Handle();
+    void Handle(MoveController controller);
 }

@@ -7,10 +7,19 @@ using UnityEngine;
 /// </summary>
 public class MoveController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Different Sprites for each state to use
+    public Sprite MoveUpSprite { get; set; }
+    public Sprite MoveDownSprite { get; set; }
+    public Sprite MoveLeftSprite { get; set; }
+    public Sprite MoveRightSprite { get; set; }
+
+    //for States to change Sprite of GameObject
+    public SpriteRenderer SpriteRenderer { get; set; }
+
+    void Awake()
     {
-        
+        //instantiate
+        SpriteRenderer = GetComponent<SpriteRenderer>();        
     }
 
     // Update is called once per frame
