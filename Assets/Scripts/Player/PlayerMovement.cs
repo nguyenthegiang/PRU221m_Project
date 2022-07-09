@@ -54,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //move character
-        rb.velocity = new Vector2(horizontalMove * Speed, verticalMove * Speed);
+        //Move character: may end up going around
+        //rb.velocity = new Vector2(horizontalMove * Speed, verticalMove * Speed);
+        //Alternative: if get flipped -> movement gets wrong
+        transform.Translate(new Vector2(horizontalMove, verticalMove) * Speed * Time.deltaTime);
     }
 }
