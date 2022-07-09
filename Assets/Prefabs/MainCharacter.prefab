@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5aff8c743c3087d4ba261b36de33d6bc, type: 3}
+  m_Sprite: {fileID: -657827756, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.65}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36042accc1d04941a81a346a3afb40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveUpSprite: {fileID: 21300000, guid: 06adf8c5c66111a4a8a8edb57d1914cd, type: 3}
-  MoveDownSprite: {fileID: 21300000, guid: d6ccf64cffab96647ade255594f88725, type: 3}
-  MoveLeftSprite: {fileID: 21300000, guid: 5f366508cc82f10419ad1f79f3e948d6, type: 3}
-  MoveRightSprite: {fileID: 21300000, guid: 5aff8c743c3087d4ba261b36de33d6bc, type: 3}
+  MoveUpSprite: {fileID: 999755471, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
+  MoveDownSprite: {fileID: -657827756, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
+  MoveLeftSprite: {fileID: -558119455, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
+  MoveRightSprite: {fileID: -1084823254, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
   SpriteRenderer: {fileID: 4396147591147947797}
