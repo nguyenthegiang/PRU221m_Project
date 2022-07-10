@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     //movement speed
     //[SerializeField]
-    public float Speed = 10f;
+    //public float Speed = 10f;
 
     //movementController for controlling Animation Transition of Character (using State Design Pattern)
     private MoveController _moveController;
@@ -52,11 +52,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
-    {
-        //Move character: may end up going around
-        //rb.velocity = new Vector2(horizontalMove * Speed, verticalMove * Speed);
-        //Alternative: if get flipped -> movement gets wrong
-        transform.Translate(new Vector2(horizontalMove, verticalMove) * Speed * Time.deltaTime);
-    }
+    //private void FixedUpdate()
+    //{
+    //    //Move character: may end up going around
+    //    //rb.velocity = new Vector2(horizontalMove * Speed, verticalMove * Speed);
+    //    //Alternative: if get flipped -> movement gets wrong
+    //    transform.Translate(new Vector2(horizontalMove, verticalMove) * Speed * Time.deltaTime);
+    //}
 }

@@ -11,7 +11,7 @@ public class MoveRight : Command
 {
     public override void Execute(Rigidbody2D character)
     {
-        character.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
+        character.velocity = new Vector2(1, 0);
     }
 }
 
@@ -19,7 +19,7 @@ public class MoveLeft : Command
 {
     public override void Execute(Rigidbody2D character)
     {
-        character.AddForce(new Vector2(0, -1), ForceMode2D.Impulse);
+        character.velocity = new Vector2(-1, 0);
     }
 }
 
@@ -27,7 +27,7 @@ public class MoveUp : Command
 {
     public override void Execute(Rigidbody2D character)
     {
-        character.AddForce(new Vector2(1, 0), ForceMode2D.Impulse);
+        character.velocity = new Vector2(0, 1);
     }
 }
 
@@ -35,7 +35,7 @@ public class MoveDown : Command
 {
     public override void Execute(Rigidbody2D character)
     {
-        character.AddForce(new Vector2(-1, 0), ForceMode2D.Impulse);
+        character.velocity = new Vector2(0, -1);
     }
 }
 public class DoNothing : Command
