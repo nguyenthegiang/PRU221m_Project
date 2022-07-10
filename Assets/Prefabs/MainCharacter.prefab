@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4396147591147947797}
   - component: {fileID: 4396147591147947792}
   - component: {fileID: 4396147591147947799}
-  - component: {fileID: -8053639144355497110}
   - component: {fileID: -5635563900090314560}
+  - component: {fileID: -1562471191682731917}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -135,20 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21712703, y: 0.12798834}
   m_EdgeRadius: 0
---- !u!114 &-8053639144355497110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396147591147947796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8421b8aefa2167b49abc57cb353879a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4396147591147947792}
-  Speed: 5
 --- !u!114 &-5635563900090314560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +152,17 @@ MonoBehaviour:
   MoveLeftSprite: {fileID: -558119455, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
   MoveRightSprite: {fileID: -1084823254, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
   SpriteRenderer: {fileID: 4396147591147947797}
+--- !u!114 &-1562471191682731917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396147591147947796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fa8558a03baae44a521bf4962f212b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 4396147591147947792}
+  Speed: 10

@@ -4,58 +4,68 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public Rigidbody2D character;
-    private Command btnA, btnS, btnD, btnW, btnL, btnR, btnU, btnD2;
-    protected float _moveDistance = 1f;
+    //For Command Pattern
+    [SerializeField]
+    private Rigidbody2D rb2d;
+    private Command btnA, btnS, btnD, btnW, 
+        btnLeftArrow, btnRightArrow, btnUpArrow, btnDownArrow, btnStop;
+    [SerializeField]
+    public float Speed = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        btnL = new DoNothing();
-        btnR = new DoNothing();
-        btnU = new DoNothing();
-        btnD2 = new DoNothing();
+        btnLeftArrow = new DoNothing();
+        btnRightArrow = new DoNothing();
+        btnUpArrow = new DoNothing();
+        btnDownArrow = new DoNothing();
 
         btnA = new MoveLeft();
         btnS = new MoveDown();
         btnD = new MoveRight();
         btnW = new MoveUp();
+
+        btnStop = new Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            btnA.Execute(character);
-        }else if (Input.GetKeyDown(KeyCode.S))
-        {
-            btnS.Execute(character);
+            btnA.Execute(rb2d, Speed);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.S))
         {
-            btnD.Execute(character);
+            btnS.Execute(rb2d, Speed);
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKey(KeyCode.D))
         {
-            btnW.Execute(character);
+            btnD.Execute(rb2d, Speed);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            btnW.Execute(rb2d, Speed);
+        } else
+        {
+            btnStop.Execute(rb2d, Speed);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            btnL.Execute(character);
+            btnLeftArrow.Execute(rb2d, Speed);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
-            btnR.Execute(character);
+            btnRightArrow.Execute(rb2d, Speed);
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if(Input.GetKey(KeyCode.UpArrow))
         {
-            btnU.Execute(character);
+            btnUpArrow.Execute(rb2d, Speed);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
-            btnD2.Execute(character);
+            btnDownArrow.Execute(rb2d, Speed);
         }
     }
     public void ChangeButtonMove(string buttonName)
@@ -63,39 +73,39 @@ public class InputHandler : MonoBehaviour
         switch (buttonName)
         {
             case "A":
-                btnL = new DoNothing();
+                btnLeftArrow = new DoNothing();
                 btnA = new MoveLeft();
                 break;
             case "LeftArrow":
                 btnA = new DoNothing();
-                btnL = new MoveLeft();
+                btnLeftArrow = new MoveLeft();
                 break;
 
             case "S":
-                btnL = new DoNothing();
+                btnLeftArrow = new DoNothing();
                 btnA = new MoveDown();
                 break;
             case "DownArrow":
                 btnA = new DoNothing();
-                btnL = new MoveDown();
+                btnLeftArrow = new MoveDown();
                 break;
 
             case "D":
-                btnL = new DoNothing();
+                btnLeftArrow = new DoNothing();
                 btnA = new MoveRight();
                 break;
             case "RightArrow":
                 btnA = new DoNothing();
-                btnL = new MoveRight();
+                btnLeftArrow = new MoveRight();
                 break;
 
             case "W":
-                btnL = new DoNothing();
+                btnLeftArrow = new DoNothing();
                 btnA = new MoveUp();
                 break;
             case "UpArrow":
                 btnA = new DoNothing();
-                btnL = new MoveUp();
+                btnLeftArrow = new MoveUp();
                 break;
             default:
                 break;
