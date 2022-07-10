@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;
     //movement speed
-    [SerializeField]
+    //[SerializeField]
     public float Speed = 10f;
 
     //movementController for controlling Animation Transition of Character (using State Design Pattern)
