@@ -16,6 +16,8 @@ public class InputHandler : MonoBehaviour
         btnLeftArrow, btnRightArrow, btnUpArrow, btnDownArrow, btnStop;
     [SerializeField]
     public float Speed = 10f;
+    [SerializeField]
+    private bool useArrowKey = false;   //to determine which buttons to use to move
 
     //For State Design Pattern
     //movementController for controlling Animation Transition of Character (using State Design Pattern)
@@ -25,12 +27,22 @@ public class InputHandler : MonoBehaviour
     void Start()
     {
         //For Command Pattern
-        ChangeButtonUp("W");
-        ChangeButtonDown("S");
-        ChangeButtonLeft("A");
-        ChangeButtonRight("D");
-
-        btnStop = new Stop();
+        //Determine whether to use WASD or Arrow Key for Moving Commands
+        if (useArrowKey)
+        {
+            ChangeButtonUp("UpArrow");
+            ChangeButtonDown("DownArrow");
+            ChangeButtonLeft("LeftArrow");
+            ChangeButtonRight("RightArrow");
+        } else
+        {
+            //Client: call to ChangeButton() methods to set buttons that call the Command
+            ChangeButtonUp("W");
+            ChangeButtonDown("S");
+            ChangeButtonLeft("A");
+            ChangeButtonRight("D");
+        }
+        btnStop = new Stop();   //Stop command won't need a button
 
         //For State Design Pattern
         //instantiate movement controller
@@ -40,45 +52,47 @@ public class InputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //For Command Pattern
+        //Call to Execute() of each Command
         if (Input.GetKey(KeyCode.A))
         {
-            btnA.Execute(rb2d, Speed);
+            btnA.Execute(rb2d, Speed, _moveController);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            btnS.Execute(rb2d, Speed);
+            btnS.Execute(rb2d, Speed, _moveController);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            btnD.Execute(rb2d, Speed);
+            btnD.Execute(rb2d, Speed, _moveController);
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            btnW.Execute(rb2d, Speed);
+            btnW.Execute(rb2d, Speed, _moveController);
         } else
         {
-            btnStop.Execute(rb2d, Speed);
+            btnStop.Execute(rb2d, Speed, _moveController);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            btnLeftArrow.Execute(rb2d, Speed);
+            btnLeftArrow.Execute(rb2d, Speed, _moveController);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            btnRightArrow.Execute(rb2d, Speed);
+            btnRightArrow.Execute(rb2d, Speed, _moveController);
         }
         else if(Input.GetKey(KeyCode.UpArrow))
         {
-            btnUpArrow.Execute(rb2d, Speed);
+            btnUpArrow.Execute(rb2d, Speed, _moveController);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            btnDownArrow.Execute(rb2d, Speed);
+            btnDownArrow.Execute(rb2d, Speed, _moveController);
         }
     }
 
-
+    //For Client to call: Change the button that will call the Command
     public void ChangeButtonLeft(string buttonName)
     {
         switch (buttonName)
@@ -96,6 +110,7 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    //For Client to call: Change the button that will call the Command
     public void ChangeButtonRight(string buttonName)
     {
         switch (buttonName)
@@ -113,6 +128,7 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    //For Client to call: Change the button that will call the Command
     public void ChangeButtonUp(string buttonName)
     {
         switch (buttonName)
@@ -130,6 +146,7 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    //For Client to call: Change the button that will call the Command
     public void ChangeButtonDown(string buttonName)
     {
         switch (buttonName)

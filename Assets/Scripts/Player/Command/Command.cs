@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public abstract class Command
 {
-    public abstract void Execute(Rigidbody2D rb2d, float speed);
+    public abstract void Execute(Rigidbody2D rb2d, float speed, MoveController moveController);
 }
 
 /// <summary>
@@ -17,10 +17,13 @@ public abstract class Command
 /// </summary>
 public class MoveRight : Command
 {
-    public override void Execute(Rigidbody2D rb2d, float speed)
+    public override void Execute(Rigidbody2D rb2d, float speed, MoveController moveController)
     {
         //using Rigidbody2D.velocity to move
         rb2d.velocity = new Vector2(1 * speed, 0);
+
+        //change Animation following move Direction (using Controller - State Design Pattern)
+        moveController.MoveRightAnimation();
     }
 }
 
@@ -30,9 +33,12 @@ public class MoveRight : Command
 /// </summary>
 public class MoveLeft : Command
 {
-    public override void Execute(Rigidbody2D rb2d, float speed)
+    public override void Execute(Rigidbody2D rb2d, float speed, MoveController moveController)
     {
         rb2d.velocity = new Vector2(-1 * speed, 0);
+
+        //change Animation following move Direction (using Controller - State Design Pattern)
+        moveController.MoveLeftAnimation();
     }
 }
 
@@ -42,9 +48,12 @@ public class MoveLeft : Command
 /// </summary>
 public class MoveUp : Command
 {
-    public override void Execute(Rigidbody2D rb2d, float speed)
+    public override void Execute(Rigidbody2D rb2d, float speed, MoveController moveController)
     {
         rb2d.velocity = new Vector2(0, 1 * speed);
+
+        //change Animation following move Direction (using Controller - State Design Pattern)
+        moveController.MoveUpAnimation();
     }
 }
 
@@ -54,9 +63,12 @@ public class MoveUp : Command
 /// </summary>
 public class MoveDown : Command
 {
-    public override void Execute(Rigidbody2D rb2d, float speed)
+    public override void Execute(Rigidbody2D rb2d, float speed, MoveController moveController)
     {
         rb2d.velocity = new Vector2(0, -1 * speed);
+
+        //change Animation following move Direction (using Controller - State Design Pattern)
+        moveController.MoveDownAnimation();
     }
 }
 
@@ -66,7 +78,7 @@ public class MoveDown : Command
 /// </summary>
 public class Stop : Command
 {
-    public override void Execute(Rigidbody2D rb2d, float speed)
+    public override void Execute(Rigidbody2D rb2d, float speed, MoveController moveController)
     {
         rb2d.velocity = new Vector2(0, 0);
     }
@@ -78,7 +90,7 @@ public class Stop : Command
 /// </summary>
 public class DoNothing : Command
 {
-    public override void Execute(Rigidbody2D rb2d, float speed)
+    public override void Execute(Rigidbody2D rb2d, float speed, MoveController moveController)
     {
         
     }

@@ -2447,11 +2447,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!50 &454849623 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4396147591147947792, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
-  m_PrefabInstance: {fileID: 4396147590952869380}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7198,10 +7193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -171905506033990344, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 454849623}
+    - target: {fileID: -1562471191682731917, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
+      propertyPath: useArrowKey
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4396147591147947796, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
       propertyPath: m_Name
       value: MainCharacter
