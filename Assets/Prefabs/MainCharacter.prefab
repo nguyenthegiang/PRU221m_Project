@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 4396147591147947792}
-  Speed: 10
+  Speed: 6
   useArrowKey: 0
 --- !u!58 &-9030774636606295099
 CircleCollider2D:
