@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// [Shortest Path Algorithm]
 /// A node for searching using Dijkstra's algorithm
 /// </summary>
 /// <typeparam>type for search node</typeparam>

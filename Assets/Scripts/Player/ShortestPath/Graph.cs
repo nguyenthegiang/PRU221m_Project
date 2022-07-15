@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
+/// [Shortest Path Algorithm]
+/// [Undirected Weighted Graph]
 /// A graph
 /// </summary>
 /// <typeparam name="T">type of values stored in graph</typeparam>

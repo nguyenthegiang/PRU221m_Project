@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// [Shortest Path Algorithm]
+/// [Sorted Linked List]
 /// A sorted linked list
 /// </summary>
 public class SortedLinkedList<T> : LinkedList<T> where T : IComparable
@@ -24,7 +26,6 @@ public class SortedLinkedList<T> : LinkedList<T> where T : IComparable
     /// <param name="item">item to add to list</param>
     public void Add(T item)
     {
-        // add your code here
         // adding to empty list
         if (First == null)
         {
@@ -60,16 +61,6 @@ public class SortedLinkedList<T> : LinkedList<T> where T : IComparable
     /// </summary>
     public void Reposition(T item)
     {
-        // add your code here
-        /*
-        LinkedListNode<T> linkedListNode = Find(item);
-        while (linkedListNode.Next.Value.CompareTo(linkedListNode.Value) < 0)
-        {
-            AddAfter(linkedListNode.Next, linkedListNode);
-            Remove(item);
-        }
-        */
-
         LinkedListNode<T> movingNode = Find(item);
         if (movingNode == null) return;
         if (movingNode.Value.Equals(First))

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
+/// [Shortest Path Algorithm]
 /// A traveler
 /// </summary>
 public class Traveler : MonoBehaviour
@@ -17,39 +18,12 @@ public class Traveler : MonoBehaviour
 	List<Vector2> pathToMove = new List<Vector2>();
 	int current = 0;
 
-	//// events fired by class
-	//PathFoundEvent pathFoundEvent = new PathFoundEvent();
-	//PathTraversalCompleteEvent pathTraversalCompleteEvent = new PathTraversalCompleteEvent();
-	#endregion
-
-	#region Constructor
-
-	// Uncomment the code below after you copy this class into the console
-	// app for the automated grader. DON'T uncomment it now; it won't
-	// compile in a Unity project
-
-	/// <summary>
-	/// Constructor
-	/// 
-	/// Note: The Traveler class in the Unity solution doesn't 
-	/// use a constructor; this constructor is to support automated grading
-	/// </summary>
-	/// <param name="gameObject">the game object the script is attached to</param>
-	//public Traveler(GameObject gameObject) :
-	//    base(gameObject)
-	//{
-	//}
-
 	#endregion
 
 	#region Properties
 
 	/// <summary>
 	/// Gets the length of the final path
-	/// 
-	/// NOTE: This property should only be accessed after the
-	/// Start method has been called (which is always the case
-	/// in Unity)
 	/// </summary>
 	public float PathLength
 	{
@@ -62,8 +36,6 @@ public class Traveler : MonoBehaviour
 
 	/// <summary>
 	/// Use this for initialization
-	/// 
-	/// Note: Leave this method public to support automated grading
 	/// </summary>
 	public void Start()
 	{
@@ -75,8 +47,6 @@ public class Traveler : MonoBehaviour
 		Waypoint end = GameObject.FindGameObjectWithTag("End").GetComponent<Waypoint>();
 		Graph<Waypoint> graph = GraphBuilder.Graph;
 		LinkedList<Waypoint> path = Search(start, end, graph);
-
-		//StartCoroutine(waiter(path));
 
 		//make path
 		foreach (Waypoint waypoint in path)
@@ -103,47 +73,13 @@ public class Traveler : MonoBehaviour
 		
     }
 
-    //IEnumerator waiter(LinkedList<Waypoint> path)
-    //{
-    //	//follow path
-    //	foreach (Waypoint waypoint in path)
-    //	{
-    //		transform.position = waypoint.Position;
-
-    //		waypoint.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-
-    //		//Wait for 2 seconds
-    //		yield return new WaitForSeconds(1);
-    //	}
-    //}
-
     #endregion
 
     #region Public methods
 
     /// <summary>
-    /// Adds the given listener for the PathFoundEvent
-    /// </summary>
-    /// <param name="listener">listener</param>
-    //public void AddPathFoundListener(UnityAction<float> listener)
-    //{
-    //	pathFoundEvent.AddListener(listener);
-    //}
-
-    /// <summary>
-    /// Adds the given listener for the PathTraversalCompleteEvent
-    /// </summary>
-    /// <param name="listener">listener</param>
-    //public void AddPathTraversalCompleteListener(UnityAction listener)
-    //{
-    //	pathTraversalCompleteEvent.AddListener(listener);
-    //}
-
-    /// <summary>
     /// Does a search for a path from start to end on
     /// graph
-    /// 
-    /// Note: Leave this method public to support automated grading
     /// </summary>
     /// <param name="start">start value</param>
     /// <param name="finish">finish value</param>
@@ -153,8 +89,6 @@ public class Traveler : MonoBehaviour
 		Graph<Waypoint> graph)
 	{
 		// Create a search list (a sorted linked list) of search nodes 
-		// (I provided a SearchNode class, which you should instantiate 
-		// with Waypoint. I also provided a SortedLinkedList class)
 		SortedLinkedList<SearchNode<Waypoint>> searchList = new SortedLinkedList<SearchNode<Waypoint>>();
 
 		// Create a dictionary of search nodes keyed by the corresponding 
@@ -212,8 +146,7 @@ public class Traveler : MonoBehaviour
 			if (currentGraphNode.Value.Id == endnode.Value.Id)
 			{
 				// Display the distance for the current search node as the path 
-				// length in the scene (Hint: I used the HUD and the event 
-				// system to do this)
+				// length in the scene
 				pathLength = currentSearchNode.Distance;
 
 				// Return a linked list of the waypoints from the start node to 
@@ -272,8 +205,6 @@ public class Traveler : MonoBehaviour
 	/// <summary>
 	/// Builds a waypoint path from the start node to the given end node
 	/// Side Effect: sets the pathLength field
-	/// 
-	/// CAUTION: Do NOT change this method; if you do, you'll break the autograder
 	/// </summary>
 	/// <returns>waypoint path</returns>
 	/// <param name="endNode">end node</param>

@@ -2555,6 +2555,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1290269241952756382, guid: 114ced72c95561940be287bf2b47131f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290269241952756382, guid: 114ced72c95561940be287bf2b47131f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1290269241952756383, guid: 114ced72c95561940be287bf2b47131f, type: 3}
       propertyPath: m_Name
       value: checkPoint1
@@ -7830,20 +7838,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
---- !u!1 &4396147590952869381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4396147591147947796, guid: 5cd47b407cfce564fa35bd6dc435cdf9, type: 3}
-  m_PrefabInstance: {fileID: 4396147590952869380}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4396147590952869382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396147590952869381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38f39a714da37240b9f33197ab68743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

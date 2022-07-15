@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hidden
+    uniqueID: 1722381465
+    locked: 0
   - name: Background
     uniqueID: 1445540693
     locked: 0

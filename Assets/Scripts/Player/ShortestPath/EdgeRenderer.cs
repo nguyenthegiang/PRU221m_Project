@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// [Shortest Path Algorithm]
 /// Draws all the edges in a graph
 /// </summary>
 public class EdgeRenderer : MonoBehaviour
