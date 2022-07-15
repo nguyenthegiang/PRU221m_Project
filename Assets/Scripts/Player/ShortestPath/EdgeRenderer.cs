@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// [Shortest Path Algorithm]
 /// Draws all the edges in a graph
+/// Used for Debugging
 /// </summary>
 public class EdgeRenderer : MonoBehaviour
 {

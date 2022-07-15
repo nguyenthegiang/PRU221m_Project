@@ -123,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36042accc1d04941a81a346a3afb40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveUpSprite: {fileID: 999755471, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
-  MoveDownSprite: {fileID: -657827756, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
-  MoveLeftSprite: {fileID: -558119455, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
-  MoveRightSprite: {fileID: -1084823254, guid: 6f1b915ac07a93948b255c57c9a63017, type: 3}
+  MoveUpSprite: {fileID: -355066307, guid: 519bd0319138b3543a68dd0faf78b7c5, type: 3}
+  MoveDownSprite: {fileID: -590528228, guid: 519bd0319138b3543a68dd0faf78b7c5, type: 3}
+  MoveLeftSprite: {fileID: -214847467, guid: 519bd0319138b3543a68dd0faf78b7c5, type: 3}
+  MoveRightSprite: {fileID: 225655167, guid: 519bd0319138b3543a68dd0faf78b7c5, type: 3}
   SpriteRenderer: {fileID: 4396147591147947797}
 --- !u!114 &-1562471191682731917
 MonoBehaviour:

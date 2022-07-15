@@ -89,6 +89,7 @@ public class Traveler : MonoBehaviour
     }
 
     /// <summary>
+    /// Perfom Shortest Path Algorithm
     /// Does a search for a path from start to end on
     /// graph
     /// </summary>
