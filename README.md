@@ -21,5 +21,9 @@ FarmVille - FVille
 ### State Design Pattern:
  - Animation Transition of Main Character
 
+## Algorithms:
+### Shortest Path Algorithm:
+ - Move Main Character by Mouse click
+
 ## Other:
  - Map: Tilemap
