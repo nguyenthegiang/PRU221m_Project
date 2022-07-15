@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -11,27 +12,30 @@ public class GraphBuilder : MonoBehaviour
     static Graph<Waypoint> graph;
 
     /// <summary>
-    /// Awake is called before Start
+    /// Build the Graph
     /// </summary>
     public void Awake()
     {
         graph = new Graph<Waypoint>();
 
         // add nodes (all waypoints) to graph
-        GameObject startObject = GameObject.FindGameObjectWithTag("Start");
-        Waypoint startWaypoint = startObject.GetComponent<Waypoint>();
-        graph.AddNode(startWaypoint);
-
         GameObject[] waypointObjects = GameObject.FindGameObjectsWithTag("Waypoint");
-        foreach (GameObject waypointObject in waypointObjects)
+
+        //create array of waypoints from array waypointObjects
+        Waypoint[] waypoints = new Waypoint[waypointObjects.Length];
+        for (int i = 0; i < waypointObjects.Length; i++)
         {
-            Waypoint waypoint = waypointObject.GetComponent<Waypoint>();
-            graph.AddNode(waypoint);
+            waypoints[i] = waypointObjects[i].GetComponent<Waypoint>();
         }
 
-        GameObject endObject = GameObject.FindGameObjectWithTag("End");
-        Waypoint endWaypoint = endObject.GetComponent<Waypoint>();
-        graph.AddNode(endWaypoint);
+        //sort by Id (to help make correct Edges)
+        Waypoint[] sortedWaypoints = waypoints.OrderBy(w => w.Id).ToArray();
+
+        //add to graph
+        foreach(Waypoint waypoint in sortedWaypoints)
+        {
+            graph.AddNode(waypoint);
+        }
 
         // add neighbors for each node in graph (create edges for Graph)
         graph.Nodes[0].AddNeighbor(graph.Nodes[1], 1);
