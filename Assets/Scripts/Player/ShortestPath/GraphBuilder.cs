@@ -55,35 +55,18 @@ public class GraphBuilder : MonoBehaviour
         graph.AddNode(endWaypoint);
 
         // add neighbors for each node in graph
-        graph.Nodes[0].AddNeighbor(graph.Nodes[6],
-            Vector2.Distance(graph.Nodes[0].Value.Position, graph.Nodes[6].Value.Position));
-        graph.Nodes[0].AddNeighbor(graph.Nodes[7],
-            Vector2.Distance(graph.Nodes[0].Value.Position, graph.Nodes[7].Value.Position));
-        graph.Nodes[6].AddNeighbor(graph.Nodes[5],
-            Vector2.Distance(graph.Nodes[6].Value.Position, graph.Nodes[5].Value.Position));
-        graph.Nodes[6].AddNeighbor(graph.Nodes[1],
-            Vector2.Distance(graph.Nodes[6].Value.Position, graph.Nodes[1].Value.Position));
-        graph.Nodes[7].AddNeighbor(graph.Nodes[4],
-            Vector2.Distance(graph.Nodes[7].Value.Position, graph.Nodes[4].Value.Position));
-        graph.Nodes[7].AddNeighbor(graph.Nodes[2],
-            Vector2.Distance(graph.Nodes[7].Value.Position, graph.Nodes[2].Value.Position));
-        graph.Nodes[1].AddNeighbor(graph.Nodes[3],
-            Vector2.Distance(graph.Nodes[1].Value.Position, graph.Nodes[3].Value.Position));
-        graph.Nodes[4].AddNeighbor(graph.Nodes[3],
-            Vector2.Distance(graph.Nodes[4].Value.Position, graph.Nodes[3].Value.Position));
-        graph.Nodes[2].AddNeighbor(graph.Nodes[4],
-            Vector2.Distance(graph.Nodes[2].Value.Position, graph.Nodes[4].Value.Position));
-        graph.Nodes[3].AddNeighbor(graph.Nodes[8],
-            Vector2.Distance(graph.Nodes[3].Value.Position, graph.Nodes[8].Value.Position));
-        graph.Nodes[4].AddNeighbor(graph.Nodes[8],
-            Vector2.Distance(graph.Nodes[4].Value.Position, graph.Nodes[8].Value.Position));
-        graph.Nodes[7].AddNeighbor(graph.Nodes[5],
-            Vector2.Distance(graph.Nodes[7].Value.Position, graph.Nodes[5].Value.Position));
-        graph.Nodes[5].AddNeighbor(graph.Nodes[3],
-            Vector2.Distance(graph.Nodes[5].Value.Position, graph.Nodes[3].Value.Position));
-
-        graph.Nodes[8].AddNeighbor(graph.Nodes[0],
-            Vector2.Distance(graph.Nodes[8].Value.Position, graph.Nodes[0].Value.Position));
+        graph.Nodes[0].AddNeighbor(graph.Nodes[1], 1);
+        graph.Nodes[0].AddNeighbor(graph.Nodes[2], 1);
+        graph.Nodes[1].AddNeighbor(graph.Nodes[3], 1);
+        graph.Nodes[1].AddNeighbor(graph.Nodes[4], 1);
+        graph.Nodes[2].AddNeighbor(graph.Nodes[3], 1);
+        graph.Nodes[2].AddNeighbor(graph.Nodes[6], 1);
+        graph.Nodes[3].AddNeighbor(graph.Nodes[5], 1);
+        graph.Nodes[3].AddNeighbor(graph.Nodes[7], 1);
+        graph.Nodes[4].AddNeighbor(graph.Nodes[5], 1);
+        graph.Nodes[5].AddNeighbor(graph.Nodes[8], 1);
+        graph.Nodes[6].AddNeighbor(graph.Nodes[7], 1);
+        graph.Nodes[7].AddNeighbor(graph.Nodes[8], 1);
 
         //foreach (GraphNode<Waypoint> node in graph.Nodes)
         //{
