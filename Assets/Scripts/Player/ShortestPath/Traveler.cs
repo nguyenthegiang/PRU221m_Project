@@ -17,7 +17,9 @@ public class Traveler : MonoBehaviour
 
     //needed for moving
     List<Vector2> pathToMove = new List<Vector2>();
-    int current = 0;
+
+    [SerializeField]
+    float Speed = 3f;
 
     #endregion
 
@@ -40,17 +42,11 @@ public class Traveler : MonoBehaviour
         //follow path if there is one
         if (pathToMove.Count > 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, pathToMove[current], Time.deltaTime * 3f);
-            if (current >= pathToMove.Count - 1)
+            transform.position = Vector3.MoveTowards(transform.position, pathToMove[0], Time.deltaTime * Speed);
+
+            if (Vector3.Distance(pathToMove[0], transform.position) < 0.1)
             {
-                return;
-            }
-            else
-            {
-            }
-            if (Vector3.Distance(pathToMove[current], transform.position) < 0.1)
-            {
-                current++;
+                pathToMove.RemoveAt(0);
             }
         }
     }
@@ -67,7 +63,6 @@ public class Traveler : MonoBehaviour
     {
         //clear path
         pathToMove = new List<Vector2>();
-        current = 0;
 
         //path to start position
         pathToMove.Add(GameObject.FindGameObjectWithTag("Start").transform.position);

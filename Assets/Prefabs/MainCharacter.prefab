@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 4396147591147947792}
-  Speed: 6
+  Speed: 5
   useArrowKey: 0
 --- !u!114 &-3254005051359680314
 MonoBehaviour:
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38f39a714da37240b9f33197ab68743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 5
 --- !u!114 &1453322555581375165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12971121}
+  m_Offset: {x: -0.0055519044, y: -0.008764178}
   serializedVersion: 2
-  m_Radius: 0.102183044
+  m_Radius: 0.08246054
