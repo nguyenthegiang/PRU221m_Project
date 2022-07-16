@@ -48,7 +48,7 @@ public class Traveler : MonoBehaviour
             else
             {
             }
-            if (Vector3.Distance(pathToMove[current], transform.position) < 1)
+            if (Vector3.Distance(pathToMove[current], transform.position) < 0.1)
             {
                 current++;
             }
