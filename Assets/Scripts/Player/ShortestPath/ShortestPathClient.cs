@@ -44,6 +44,12 @@ public class ShortestPathClient : MonoBehaviour
             //reset all Waypoint's tag before assigning it again
             resetTagWaypoint();
 
+            //Check: if 2 waypoints is the same => no need for movement => end Algorithm
+            if (startWaypoint.Id == endWaypoint.Id)
+            {
+                return;
+            }
+
             //Assign Tag for Start Waypoint and End Waypoint for Algorithm to perform
             startWaypoint.gameObject.tag = "Start";
             endWaypoint.gameObject.tag = "End";

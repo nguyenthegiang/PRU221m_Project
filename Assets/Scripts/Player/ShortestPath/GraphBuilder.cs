@@ -38,6 +38,7 @@ public class GraphBuilder : MonoBehaviour
         }
 
         // add neighbors for each node in graph (create edges for Graph)
+        // Directed Graph => which every 2 Points of Graph, have to add 2 Edges
         graph.Nodes[0].AddNeighbor(graph.Nodes[1], 1);
         graph.Nodes[0].AddNeighbor(graph.Nodes[2], 1);
         graph.Nodes[1].AddNeighbor(graph.Nodes[3], 1);
@@ -50,6 +51,19 @@ public class GraphBuilder : MonoBehaviour
         graph.Nodes[5].AddNeighbor(graph.Nodes[8], 1);
         graph.Nodes[6].AddNeighbor(graph.Nodes[7], 1);
         graph.Nodes[7].AddNeighbor(graph.Nodes[8], 1);
+
+        graph.Nodes[1].AddNeighbor(graph.Nodes[0], 1);
+        graph.Nodes[2].AddNeighbor(graph.Nodes[0], 1);
+        graph.Nodes[3].AddNeighbor(graph.Nodes[1], 1);
+        graph.Nodes[4].AddNeighbor(graph.Nodes[1], 1);
+        graph.Nodes[3].AddNeighbor(graph.Nodes[2], 1);
+        graph.Nodes[6].AddNeighbor(graph.Nodes[2], 1);
+        graph.Nodes[5].AddNeighbor(graph.Nodes[3], 1);
+        graph.Nodes[7].AddNeighbor(graph.Nodes[3], 1);
+        graph.Nodes[5].AddNeighbor(graph.Nodes[4], 1);
+        graph.Nodes[8].AddNeighbor(graph.Nodes[5], 1);
+        graph.Nodes[7].AddNeighbor(graph.Nodes[6], 1);
+        graph.Nodes[8].AddNeighbor(graph.Nodes[7], 1);
     }
 
     /// <summary>
