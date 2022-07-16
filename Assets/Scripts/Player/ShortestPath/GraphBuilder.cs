@@ -64,6 +64,122 @@ public class GraphBuilder : MonoBehaviour
         graph.Nodes[8].AddNeighbor(graph.Nodes[5], 1);
         graph.Nodes[7].AddNeighbor(graph.Nodes[6], 1);
         graph.Nodes[8].AddNeighbor(graph.Nodes[7], 1);
+
+        //Huyen add
+        graph.Nodes[9].AddNeighbor(graph.Nodes[10], 1);
+        graph.Nodes[10].AddNeighbor(graph.Nodes[9], 1);
+
+        graph.Nodes[29].AddNeighbor(graph.Nodes[15], 1); 
+        graph.Nodes[15].AddNeighbor(graph.Nodes[29], 1);
+
+        graph.Nodes[26].AddNeighbor(graph.Nodes[27], 1);
+        graph.Nodes[27].AddNeighbor(graph.Nodes[26], 1);
+
+        graph.Nodes[23].AddNeighbor(graph.Nodes[22], 1);
+        graph.Nodes[22].AddNeighbor(graph.Nodes[23], 1);
+
+        graph.Nodes[10].AddNeighbor(graph.Nodes[11], 1);
+        graph.Nodes[11].AddNeighbor(graph.Nodes[10], 1);
+        graph.Nodes[10].AddNeighbor(graph.Nodes[15], 1);
+        graph.Nodes[15].AddNeighbor(graph.Nodes[10], 1);
+
+        graph.Nodes[15].AddNeighbor(graph.Nodes[16], 1);
+        graph.Nodes[16].AddNeighbor(graph.Nodes[15], 1);
+        graph.Nodes[15].AddNeighbor(graph.Nodes[27], 1);
+        graph.Nodes[27].AddNeighbor(graph.Nodes[15], 1);
+
+        graph.Nodes[27].AddNeighbor(graph.Nodes[28], 1);
+        graph.Nodes[28].AddNeighbor(graph.Nodes[27], 1);
+        graph.Nodes[27].AddNeighbor(graph.Nodes[22], 1);
+        graph.Nodes[22].AddNeighbor(graph.Nodes[27], 1);
+
+        graph.Nodes[22].AddNeighbor(graph.Nodes[21], 1);
+        graph.Nodes[21].AddNeighbor(graph.Nodes[22], 1);
+        graph.Nodes[22].AddNeighbor(graph.Nodes[30], 1);
+        graph.Nodes[30].AddNeighbor(graph.Nodes[22], 1);
+
+        graph.Nodes[11].AddNeighbor(graph.Nodes[12], 1);
+        graph.Nodes[12].AddNeighbor(graph.Nodes[11], 1);
+        graph.Nodes[11].AddNeighbor(graph.Nodes[16], 1);
+        graph.Nodes[16].AddNeighbor(graph.Nodes[11], 1);
+
+        graph.Nodes[16].AddNeighbor(graph.Nodes[17], 1);
+        graph.Nodes[17].AddNeighbor(graph.Nodes[16], 1);
+        graph.Nodes[16].AddNeighbor(graph.Nodes[28], 1);
+        graph.Nodes[28].AddNeighbor(graph.Nodes[16], 1);
+
+        graph.Nodes[28].AddNeighbor(graph.Nodes[21], 1);
+        graph.Nodes[21].AddNeighbor(graph.Nodes[28], 1);
+        graph.Nodes[28].AddNeighbor(graph.Nodes[25], 1);
+        graph.Nodes[25].AddNeighbor(graph.Nodes[28], 1);
+
+        graph.Nodes[21].AddNeighbor(graph.Nodes[20], 1);
+        graph.Nodes[20].AddNeighbor(graph.Nodes[21], 1);
+        graph.Nodes[21].AddNeighbor(graph.Nodes[31], 1);
+        graph.Nodes[31].AddNeighbor(graph.Nodes[21], 1);
+
+        graph.Nodes[12].AddNeighbor(graph.Nodes[13], 1);
+        graph.Nodes[13].AddNeighbor(graph.Nodes[12], 1);
+        graph.Nodes[12].AddNeighbor(graph.Nodes[17], 1);
+        graph.Nodes[17].AddNeighbor(graph.Nodes[12], 1);
+
+        graph.Nodes[17].AddNeighbor(graph.Nodes[14], 1);
+        graph.Nodes[14].AddNeighbor(graph.Nodes[17], 1);
+        graph.Nodes[17].AddNeighbor(graph.Nodes[25], 1);
+        graph.Nodes[25].AddNeighbor(graph.Nodes[17], 1);
+
+        graph.Nodes[25].AddNeighbor(graph.Nodes[24], 1);
+        graph.Nodes[24].AddNeighbor(graph.Nodes[25], 1);
+        graph.Nodes[25].AddNeighbor(graph.Nodes[20], 1);
+        graph.Nodes[20].AddNeighbor(graph.Nodes[25], 1);
+
+        graph.Nodes[20].AddNeighbor(graph.Nodes[32], 1);
+        graph.Nodes[32].AddNeighbor(graph.Nodes[20], 1);
+        graph.Nodes[20].AddNeighbor(graph.Nodes[18], 1);
+        graph.Nodes[18].AddNeighbor(graph.Nodes[20], 1);
+
+        graph.Nodes[13].AddNeighbor(graph.Nodes[4], 1);
+        graph.Nodes[4].AddNeighbor(graph.Nodes[13], 1);
+        graph.Nodes[13].AddNeighbor(graph.Nodes[14], 1);
+        graph.Nodes[14].AddNeighbor(graph.Nodes[13], 1);
+
+        graph.Nodes[14].AddNeighbor(graph.Nodes[5], 1);
+        graph.Nodes[5].AddNeighbor(graph.Nodes[14], 1);
+        graph.Nodes[14].AddNeighbor(graph.Nodes[24], 1);
+        graph.Nodes[24].AddNeighbor(graph.Nodes[14], 1);
+
+        graph.Nodes[8].AddNeighbor(graph.Nodes[24], 1);
+        graph.Nodes[24].AddNeighbor(graph.Nodes[8], 1);
+        graph.Nodes[24].AddNeighbor(graph.Nodes[18], 1);
+        graph.Nodes[18].AddNeighbor(graph.Nodes[24], 1);
+
+        graph.Nodes[18].AddNeighbor(graph.Nodes[19], 1);
+        graph.Nodes[19].AddNeighbor(graph.Nodes[18], 1);
+        graph.Nodes[18].AddNeighbor(graph.Nodes[33], 1);
+        graph.Nodes[33].AddNeighbor(graph.Nodes[18], 1);
+
+        graph.Nodes[6].AddNeighbor(graph.Nodes[37], 1);
+        graph.Nodes[37].AddNeighbor(graph.Nodes[6], 1);
+        graph.Nodes[37].AddNeighbor(graph.Nodes[36], 1);
+        graph.Nodes[36].AddNeighbor(graph.Nodes[37], 1);
+
+        graph.Nodes[18].AddNeighbor(graph.Nodes[33], 1);
+        graph.Nodes[33].AddNeighbor(graph.Nodes[18], 1);
+        graph.Nodes[19].AddNeighbor(graph.Nodes[34], 1);
+        graph.Nodes[34].AddNeighbor(graph.Nodes[19], 1);
+
+        graph.Nodes[38].AddNeighbor(graph.Nodes[35], 1);
+        graph.Nodes[35].AddNeighbor(graph.Nodes[38], 1);
+        graph.Nodes[38].AddNeighbor(graph.Nodes[37], 1);
+        graph.Nodes[37].AddNeighbor(graph.Nodes[38], 1);
+        graph.Nodes[38].AddNeighbor(graph.Nodes[19], 1);
+        graph.Nodes[19].AddNeighbor(graph.Nodes[38], 1);
+
+        graph.Nodes[19].AddNeighbor(graph.Nodes[8], 1);
+        graph.Nodes[8].AddNeighbor(graph.Nodes[19], 1);
+        graph.Nodes[7].AddNeighbor(graph.Nodes[38], 1);
+        graph.Nodes[38].AddNeighbor(graph.Nodes[7], 1);
+
     }
 
     /// <summary>
