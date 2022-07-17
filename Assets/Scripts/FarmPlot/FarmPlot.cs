@@ -16,7 +16,6 @@ public class FarmPlot : MonoBehaviour
     public Plant plant;
 
     //Control Ripe time
-    [SerializeField]
     const float ripeSecond = 3f;
     Timer ripeTimer;
 

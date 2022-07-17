@@ -13,22 +13,19 @@ public class RainDrop : MonoBehaviour
     private Action<RainDrop> _killAction;
 
     //Control destroy time
-    [SerializeField]
     const float fallingSeconds = 2f;
     Timer fallingTimer;
 
-    //pass method in
+    //things to do when this gameObject is created by pool
     public void Init(Action<RainDrop> killAction)
-    {
-        _killAction = killAction;
-    }
-
-    void Start()
     {
         //create and start Timer
         fallingTimer = gameObject.AddComponent<Timer>();
         fallingTimer.Duration = fallingSeconds;
         fallingTimer.Run();
+
+        //pass method in
+        _killAction = killAction;
     }
 
     void Update()

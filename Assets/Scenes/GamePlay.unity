@@ -2940,6 +2940,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420034}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3037,6 +3038,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df387f5d5b5c4640b1973931d043e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604fa6282b8b80349b5e65364643bcdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainDropPrefab: {fileID: 9124342749920917005, guid: ec1c2ea4d1dee644fbd8fe4880a82cb2, type: 3}
+  rainDropAmount: 50
 --- !u!1001 &524042625
 PrefabInstance:
   m_ObjectHideFlags: 0
