@@ -8,14 +8,14 @@ using UnityEngine;
 /// </summary>
 public class FarmController : MonoBehaviour
 {
-    ////Different Sprites for each state to use
-    //public Sprite MoveUpSprite;
-    //public Sprite MoveDownSprite;
-    //public Sprite MoveLeftSprite;
-    //public Sprite MoveRightSprite;
+    //Different Sprites for each state to use
+    public Sprite EmptyPlotSprite;  //dat trong
+    public Sprite SeedPlotSprite;   //gieo hat
+    public Sprite WaterPlotSprite;  //nay mam
+    public Sprite RipePlotSprite;   //chin
 
-    ////for States to change Sprite of GameObject
-    //public SpriteRenderer SpriteRenderer;
+    //for States to change Sprite of GameObject
+    public SpriteRenderer SpriteRenderer;
 
     //// states of movement
     //private IMoveState _moveDownState, _moveUpState, _moveLeftState, _moveRightState;

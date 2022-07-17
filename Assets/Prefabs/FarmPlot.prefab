@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 70585959548072759}
   - component: {fileID: 5748113858675125733}
   - component: {fileID: 5767376460918470112}
+  - component: {fileID: 8025361069036176945}
   m_Layer: 0
   m_Name: FarmPlot
   m_TagString: Untagged
@@ -97,3 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5c813ebf22b8845ac74f6ebc0b66ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8025361069036176945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663940398229538587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6072ddd42f0b424ab69f2fc9f3cca61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmptyPlotSprite: {fileID: 21300000, guid: 88bceec5b888a7a40814f24e35f74375, type: 3}
+  SeedPlotSprite: {fileID: 21300000, guid: 35f65a5c7cb10ca4d977ff6cab29d68a, type: 3}
+  WaterPlotSprite: {fileID: 21300000, guid: f845305741a35ad49ba68271764a0c77, type: 3}
+  RipePlotSprite: {fileID: 21300000, guid: 9aed61137a51d1d4c87bfb941d8dc771, type: 3}
+  SpriteRenderer: {fileID: 5748113858675125733}
