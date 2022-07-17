@@ -7,6 +7,7 @@ TagManager:
   - Waypoint
   - Start
   - End
+  - FarmPlot
   layers:
   - Default
   - TransparentFX

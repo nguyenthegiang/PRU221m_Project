@@ -32,7 +32,7 @@ public class GraphBuilder : MonoBehaviour
         Waypoint[] sortedWaypoints = waypoints.OrderBy(w => w.Id).ToArray();
 
         //add to graph
-        foreach(Waypoint waypoint in sortedWaypoints)
+        foreach (Waypoint waypoint in sortedWaypoints)
         {
             graph.AddNode(waypoint);
         }
@@ -65,11 +65,10 @@ public class GraphBuilder : MonoBehaviour
         graph.Nodes[7].AddNeighbor(graph.Nodes[6], 1);
         graph.Nodes[8].AddNeighbor(graph.Nodes[7], 1);
 
-        //Huyen add
         graph.Nodes[9].AddNeighbor(graph.Nodes[10], 1);
         graph.Nodes[10].AddNeighbor(graph.Nodes[9], 1);
 
-        graph.Nodes[29].AddNeighbor(graph.Nodes[15], 1); 
+        graph.Nodes[29].AddNeighbor(graph.Nodes[15], 1);
         graph.Nodes[15].AddNeighbor(graph.Nodes[29], 1);
 
         graph.Nodes[26].AddNeighbor(graph.Nodes[27], 1);
