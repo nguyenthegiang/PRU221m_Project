@@ -4,8 +4,10 @@ using UnityEngine;
 
 /// <summary>
 /// Client using the {FarmPlot} to control it
-/// Guide:
-///     - Farm Seed: Press J
+/// Guide: Stand next to the Farm Plot you want to control
+///     - Sow: Press J
+///     - Water: Press K
+///     - Harvest: Press L
 /// </summary>
 public class Farmer : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class Farmer : MonoBehaviour
         //find all FarmPlots in Map
         farmPlots = new List<FarmPlot>();
         GameObject[] farmPlotObjects = GameObject.FindGameObjectsWithTag("FarmPlot");
-        foreach(GameObject farmPlotObject in farmPlotObjects)
+        foreach (GameObject farmPlotObject in farmPlotObjects)
         {
             farmPlots.Add(farmPlotObject.GetComponent<FarmPlot>());
         }
@@ -31,6 +33,20 @@ public class Farmer : MonoBehaviour
             /*Find closest FarmPlot to the Main Character to perform action to*/
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
             actionFarmPlot.FarmSeed();
+        }
+        //Farm Water
+        else if (Input.GetKeyUp(KeyCode.K))
+        {
+            /*Find closest FarmPlot to the Main Character to perform action to*/
+            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
+            actionFarmPlot.FarmWater();
+        }
+        //Farm Harvest
+        else if (Input.GetKeyUp(KeyCode.L))
+        {
+            /*Find closest FarmPlot to the Main Character to perform action to*/
+            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
+            actionFarmPlot.FarmHarvest();
         }
     }
 
