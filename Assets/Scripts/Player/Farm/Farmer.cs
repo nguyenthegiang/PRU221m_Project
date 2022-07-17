@@ -15,8 +15,14 @@ using UnityEngine;
 /// </summary>
 public class Farmer : MonoBehaviour
 {
-    //list of FarmPlot to control
+    //List of FarmPlot to control
     List<FarmPlot> farmPlots;
+
+    //Amount of Money the User has
+    //Capital: 50
+    public int Money = 50;
+
+    //A Queue that contains all the Seeds that User has
 
     void Start()
     {
