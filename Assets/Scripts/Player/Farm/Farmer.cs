@@ -6,11 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Client using the {FarmPlot} to control it
 /// Guide: Stand next to the Farm Plot you want to control
-///     - Sow: 
-///         + Carrot: Press J
-///         + Pumpkin: Press U
-///         + Rice: Press I
-///         + Sunflower: Press O
+///     - Sow: Press J
 ///     - Water: Press K
 ///     - Harvest: Press L
 ///     
@@ -73,7 +69,8 @@ public class Farmer : MonoBehaviour
         {
             /*Find closest FarmPlot to the Main Character to perform action to*/
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmHarvest();
+            //Add to the Money of User the Amount of money received after harvesting the farm plot
+            Money += actionFarmPlot.FarmHarvest();
         }
 
         //--------------------Buy Seed--------------------

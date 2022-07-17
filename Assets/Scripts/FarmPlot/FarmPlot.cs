@@ -10,7 +10,7 @@ using UnityEngine;
 public class FarmPlot : MonoBehaviour
 {
     //For controlling Farm State of Farm Plot
-    private FarmController _farmController;
+    public FarmController _farmController;
 
     //Type of Plant in this FarmPlot (will make this FarmPlot appear differently when Ripe
     public Plant plant;
@@ -63,8 +63,9 @@ public class FarmPlot : MonoBehaviour
     }
 
     //(For Farmer to call) [Client] call to method of Controller to change state
-    public void FarmHarvest()
+    //return the Amount of Money received after Harvesting this Plot (based of type of Plant on it)
+    public int FarmHarvest()
     {
-        _farmController.FarmHarvest();
+        return _farmController.FarmHarvest(plant);
     }
 }

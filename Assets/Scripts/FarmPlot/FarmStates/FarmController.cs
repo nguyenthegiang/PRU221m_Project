@@ -93,8 +93,42 @@ public class FarmController : MonoBehaviour
     }
 
     //change to Harvest State
-    public void FarmHarvest()
+    //return the amount of money received after harvesting (selling) this Plant
+    public int FarmHarvest(Plant plant)
     {
+        int moneyReceived;
+        //depend on type of Plant -> has different amount of money received
+        switch (plant)
+        {
+            case Plant.Carrot:
+                {
+                    moneyReceived = 50;
+                    break;
+                }
+            case Plant.Pumpkin:
+                {
+                    moneyReceived = 70;
+                    break;
+                }
+            case Plant.Rice:
+                {
+                    moneyReceived = 90;
+                    break;
+                }
+            case Plant.Sunflower:
+                {
+                    moneyReceived = 100;
+                    break;
+                }
+            default:
+                {
+                    moneyReceived = 0;
+                    break;
+                }
+        }
+
         _farmStateContext.Transition(_farmHarvestState);
+
+        return moneyReceived;
     }
 }
