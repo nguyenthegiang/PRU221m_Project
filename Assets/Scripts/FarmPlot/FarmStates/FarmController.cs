@@ -21,7 +21,7 @@ public class FarmController : MonoBehaviour
     private IFarmState _farmSeedState, _farmWaterState, _farmRipeState, _farmHarvestState;
 
     //context class
-    private FarmStateContext _farmStateContext;
+    public FarmStateContext _farmStateContext;
 
     void Awake()
     {
@@ -37,7 +37,7 @@ public class FarmController : MonoBehaviour
         _farmHarvestState = gameObject.AddComponent<FarmHarvestState>();
 
         //set default state
-        _farmStateContext.Transition(_farmHarvestState);
+        _farmStateContext.CurrentState = _farmHarvestState;
     }
 
     //change to Seed State
