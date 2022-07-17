@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,11 @@ using UnityEngine;
 ///         + Sunflower: Press O
 ///     - Water: Press K
 ///     - Harvest: Press L
+///     
+/// [Queue - Client]: Using the Queue to control the list of Seeds the User has:
+///     - When user buys a new Seed => Enqueue
+///     - When user plant a Seed => Dequeue
+///     => Always use the oldest Seed to plant
 /// </summary>
 public class Farmer : MonoBehaviour
 {
@@ -19,10 +25,11 @@ public class Farmer : MonoBehaviour
     List<FarmPlot> farmPlots;
 
     //Amount of Money the User has
-    //Capital: 50
+    //Capital: 50$
     public int Money = 50;
 
     //A Queue that contains all the Seeds that User has
+    Queue<Plant> seeds = new Queue<Plant>();
 
     void Start()
     {
@@ -37,33 +44,22 @@ public class Farmer : MonoBehaviour
 
     void Update()
     {
-        //Farm Seed: Carrot
+        //---------------------Farm--------------------
+        //Farm Seed
         if (Input.GetKeyUp(KeyCode.J))
         {
             /*Find closest FarmPlot to the Main Character to perform action to*/
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmSeed(Plant.Carrot);
-        }
-        //Farm Seed: Pumpkin
-        else if (Input.GetKeyUp(KeyCode.U))
-        {
-            /*Find closest FarmPlot to the Main Character to perform action to*/
-            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmSeed(Plant.Pumpkin);
-        }
-        //Farm Seed: Rice
-        else if (Input.GetKeyUp(KeyCode.I))
-        {
-            /*Find closest FarmPlot to the Main Character to perform action to*/
-            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmSeed(Plant.Rice);
-        }
-        //Farm Seed: Sunflower
-        else if (Input.GetKeyUp(KeyCode.O))
-        {
-            /*Find closest FarmPlot to the Main Character to perform action to*/
-            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmSeed(Plant.Sunflower);
+            //Take a Seed from the Queue to Farm
+            try
+            {
+                actionFarmPlot.FarmSeed(seeds.Dequeue());
+            } catch (Exception)
+            {
+                //alert: if there are no Seed in Queue
+                print("Don't have any Seed to Farm");
+            }
+            
         }
         //Farm Water
         else if (Input.GetKeyUp(KeyCode.K))
@@ -78,6 +74,75 @@ public class Farmer : MonoBehaviour
             /*Find closest FarmPlot to the Main Character to perform action to*/
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
             actionFarmPlot.FarmHarvest();
+        }
+
+        //--------------------Buy Seed--------------------
+        //Buy Seed: Carrot - Cost: 10$
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            //Not allow buying if don't have enough money
+            if (Money - 10 < 0)
+            {
+                //alert
+                print("Not enough money!");
+            } else
+            {
+                //Add seed to Queue
+                seeds.Enqueue(Plant.Carrot);
+                //Subtract Money
+                Money -= 10;
+            }
+        }
+        //Buy Seed: Pumpkin - Cost: 20$
+        else if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            //Not allow buying if don't have enough money
+            if (Money - 20 < 0)
+            {
+                //alert
+                print("Not enough money!");
+            }
+            else
+            {
+                //Add seed to Queue
+                seeds.Enqueue(Plant.Pumpkin);
+                //Subtract Money
+                Money -= 20;
+            }
+        }
+        //Buy Seed: Rice - Cost: 30$
+        else if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            //Not allow buying if don't have enough money
+            if (Money - 30 < 0)
+            {
+                //alert
+                print("Not enough money!");
+            }
+            else
+            {
+                //Add seed to Queue
+                seeds.Enqueue(Plant.Rice);
+                //Subtract Money
+                Money -= 30;
+            }
+        }
+        //Buy Seed: Sunflower - Cost: 40$
+        else if (Input.GetKeyUp(KeyCode.Alpha4))
+        {
+            //Not allow buying if don't have enough money
+            if (Money - 40 < 0)
+            {
+                //alert
+                print("Not enough money!");
+            }
+            else
+            {
+                //Add seed to Queue
+                seeds.Enqueue(Plant.Sunflower);
+                //Subtract Money
+                Money -= 40;
+            }
         }
     }
 
