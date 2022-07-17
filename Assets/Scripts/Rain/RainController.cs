@@ -6,7 +6,8 @@ using UnityEngine.Pool;
 
 /// <summary>
 /// [Object Pool Pattern - Client (using the Pool)]
-/// Control the Rain: Make it Rain every 10 seconds
+/// Control the Rain: Make it Rain every 10 seconds;
+/// When it Rain: Make all FarmPlots in Map to be Watered
 /// </summary>
 public class RainController : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class RainController : MonoBehaviour
     //amount of rainDrop every time it rains
     [SerializeField]
     float rainDropAmount = 50;
+
+    //list of FarmPlot to control
+    List<FarmPlot> farmPlots;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +81,14 @@ public class RainController : MonoBehaviour
         rainTimer = gameObject.AddComponent<Timer>();
         rainTimer.Duration = rainDelaySeconds;
         rainTimer.Run();
+
+        //find all FarmPlots in Map
+        farmPlots = new List<FarmPlot>();
+        GameObject[] farmPlotObjects = GameObject.FindGameObjectsWithTag("FarmPlot");
+        foreach (GameObject farmPlotObject in farmPlotObjects)
+        {
+            farmPlots.Add(farmPlotObject.GetComponent<FarmPlot>());
+        }
     }
 
     void Update()
@@ -85,8 +97,18 @@ public class RainController : MonoBehaviour
         if (rainTimer.Finished)
         {
             MakeRain();
+            WaterAllFarmPlots();
             rainTimer.Duration = rainDelaySeconds;
             rainTimer.Run();
+        }
+    }
+
+    //Water all FarmPlots because of the Rain
+    private void WaterAllFarmPlots()
+    {
+        foreach (FarmPlot farmPlot in farmPlots)
+        {
+            farmPlot.FarmWater();
         }
     }
 
@@ -98,6 +120,8 @@ public class RainController : MonoBehaviour
             CreateRainDrop();
         }
     }
+
+
 
     //Create a RainDrop with Pool
     //Create in a random location in Map
