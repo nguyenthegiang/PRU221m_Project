@@ -15,10 +15,26 @@ public class FarmPlot : MonoBehaviour
     //Type of Plant in this FarmPlot (will make this FarmPlot appear differently when Ripe
     public Plant plant;
 
+    //Control Ripe time
+    const float ripeSecond = 3f;
+    Timer ripeTimer;
+
     void Start()
     {
         //instantiate farm controller
         _farmController = GetComponent<FarmController>();
+
+        //create Timer
+        ripeTimer = gameObject.AddComponent<Timer>();
+    }
+
+    void Update()
+    {
+        // check for time to make plant ripe
+        if (ripeTimer.Finished)
+        {
+            FarmRipe();
+        }
     }
 
     //(For Farmer to call) [Client] call to method of Controller to change state
@@ -33,6 +49,10 @@ public class FarmPlot : MonoBehaviour
     public void FarmWater()
     {
         _farmController.FarmWater();
+
+        //Start Timer to determine when Plant will Ripe
+        ripeTimer.Duration = ripeSecond;
+        ripeTimer.Run();
     }
 
     //(For this class to call) [Client] call to method of Controller to change state

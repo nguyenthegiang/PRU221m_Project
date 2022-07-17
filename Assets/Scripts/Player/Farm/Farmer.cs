@@ -73,13 +73,6 @@ public class Farmer : MonoBehaviour
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
             actionFarmPlot.FarmHarvest();
         }
-        //(For Debug) Farm Ripe
-        else if (Input.GetKeyUp(KeyCode.P))
-        {
-            /*Find closest FarmPlot to the Main Character to perform action to*/
-            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmRipe();
-        }
     }
 
     //Find closest FarmPlot to a position
