@@ -5,7 +5,11 @@ using UnityEngine;
 /// <summary>
 /// Client using the {FarmPlot} to control it
 /// Guide: Stand next to the Farm Plot you want to control
-///     - Sow: Press J
+///     - Sow: 
+///         + Carrot: Press J
+///         + Pumpkin: Press U
+///         + Rice: Press I
+///         + Sunflower: Press O
 ///     - Water: Press K
 ///     - Harvest: Press L
 /// </summary>
@@ -27,12 +31,33 @@ public class Farmer : MonoBehaviour
 
     void Update()
     {
-        //Farm Seed
+        //Farm Seed: Carrot
         if (Input.GetKeyUp(KeyCode.J))
         {
             /*Find closest FarmPlot to the Main Character to perform action to*/
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
-            actionFarmPlot.FarmSeed();
+            actionFarmPlot.FarmSeed(Plant.Carrot);
+        }
+        //Farm Seed: Pumpkin
+        else if (Input.GetKeyUp(KeyCode.U))
+        {
+            /*Find closest FarmPlot to the Main Character to perform action to*/
+            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
+            actionFarmPlot.FarmSeed(Plant.Pumpkin);
+        }
+        //Farm Seed: Rice
+        else if (Input.GetKeyUp(KeyCode.I))
+        {
+            /*Find closest FarmPlot to the Main Character to perform action to*/
+            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
+            actionFarmPlot.FarmSeed(Plant.Rice);
+        }
+        //Farm Seed: Sunflower
+        else if (Input.GetKeyUp(KeyCode.O))
+        {
+            /*Find closest FarmPlot to the Main Character to perform action to*/
+            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
+            actionFarmPlot.FarmSeed(Plant.Sunflower);
         }
         //Farm Water
         else if (Input.GetKeyUp(KeyCode.K))
@@ -47,6 +72,13 @@ public class Farmer : MonoBehaviour
             /*Find closest FarmPlot to the Main Character to perform action to*/
             FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
             actionFarmPlot.FarmHarvest();
+        }
+        //(For Debug) Farm Ripe
+        else if (Input.GetKeyUp(KeyCode.P))
+        {
+            /*Find closest FarmPlot to the Main Character to perform action to*/
+            FarmPlot actionFarmPlot = findClosestFarmPlot(transform.position);
+            actionFarmPlot.FarmRipe();
         }
     }
 

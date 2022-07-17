@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5c813ebf22b8845ac74f6ebc0b66ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plant: 0
 --- !u!114 &8025361069036176945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,4 +115,8 @@ MonoBehaviour:
   SeedPlotSprite: {fileID: 21300000, guid: 35f65a5c7cb10ca4d977ff6cab29d68a, type: 3}
   WaterPlotSprite: {fileID: 21300000, guid: f845305741a35ad49ba68271764a0c77, type: 3}
   RipePlotSprite: {fileID: 21300000, guid: 9aed61137a51d1d4c87bfb941d8dc771, type: 3}
+  PumpkinRipePlotSprite: {fileID: 21300000, guid: 5cfce49864987a54ba62c906e27989a6, type: 3}
+  CarrotRipePlotSprite: {fileID: 21300000, guid: 9aed61137a51d1d4c87bfb941d8dc771, type: 3}
+  RiceRipePlotSprite: {fileID: 21300000, guid: 6766d4b43ee630241b67bab161ddac97, type: 3}
+  SunflowerRipePlotSprite: {fileID: 21300000, guid: 071081e59acd34241aa335ec5e9fbd81, type: 3}
   SpriteRenderer: {fileID: 5748113858675125733}

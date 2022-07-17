@@ -14,6 +14,12 @@ public class FarmController : MonoBehaviour
     public Sprite WaterPlotSprite;  //nay mam
     public Sprite RipePlotSprite;   //chin
 
+    //Different types of Plant Sprite
+    public Sprite PumpkinRipePlotSprite;    //bi ngo
+    public Sprite CarrotRipePlotSprite;     //ca rot
+    public Sprite RiceRipePlotSprite;       //lua
+    public Sprite SunflowerRipePlotSprite;  //hoa huong duong
+
     //for States to change Sprite of GameObject
     public SpriteRenderer SpriteRenderer;
 
@@ -53,8 +59,36 @@ public class FarmController : MonoBehaviour
     }
 
     //change to Ripe State
-    public void FarmRipe()
+    public void FarmRipe(Plant plant)
     {
+        //depend on type of Plant -> has different Sprite of Ripe State
+        //-> change RipePlotSprite accordingly
+        switch (plant)
+        {
+            case Plant.Carrot:
+                {
+                    RipePlotSprite = CarrotRipePlotSprite;
+                    break;
+                }
+            case Plant.Pumpkin:
+                {
+                    RipePlotSprite = PumpkinRipePlotSprite;
+                    break;
+                }
+            case Plant.Rice:
+                {
+                    RipePlotSprite = RiceRipePlotSprite;
+                    break;
+                }
+            case Plant.Sunflower:
+                {
+                    RipePlotSprite = SunflowerRipePlotSprite;
+                    break;
+                }
+            default:
+                break;
+        }
+
         _farmStateContext.Transition(_farmRipeState);
     }
 
