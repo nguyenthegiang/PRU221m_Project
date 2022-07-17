@@ -84,7 +84,8 @@ public class Traveler : MonoBehaviour
     }
 
     /// <summary>
-    /// Perfom Shortest Path Algorithm
+    /// Perfom [Shortest Path Algorithm]
+    /// {Algorithmic Complexity: O(v^2)}
     /// Does a search for a path from start to end on
     /// graph
     /// </summary>
