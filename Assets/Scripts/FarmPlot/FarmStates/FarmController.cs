@@ -17,50 +17,50 @@ public class FarmController : MonoBehaviour
     //for States to change Sprite of GameObject
     public SpriteRenderer SpriteRenderer;
 
-    //// states of movement
-    //private IMoveState _moveDownState, _moveUpState, _moveLeftState, _moveRightState;
+    // states of farm
+    private IFarmState _farmSeedState, _farmWaterState, _farmRipeState, _farmHarvestState;
 
-    ////context class
-    //private MoveStateContext _moveStateContext;
+    //context class
+    private FarmStateContext _farmStateContext;
 
-    //void Awake()
-    //{
-    //    //instantiate spriteRenderer
-    //    SpriteRenderer = GetComponent<SpriteRenderer>();
+    void Awake()
+    {
+        //instantiate spriteRenderer
+        SpriteRenderer = GetComponent<SpriteRenderer>();
 
-    //    //init state context and move states
-    //    _moveStateContext = new MoveStateContext(this);
-    //    //assign move states to gameObject
-    //    _moveDownState = gameObject.AddComponent<MoveDownState>();
-    //    _moveUpState = gameObject.AddComponent<MoveUpState>();
-    //    _moveLeftState = gameObject.AddComponent<MoveLeftState>();
-    //    _moveRightState = gameObject.AddComponent<MoveRightState>();
+        //init state context and farm states
+        _farmStateContext = new FarmStateContext(this);
+        //assign farm states to gameObject
+        _farmSeedState = gameObject.AddComponent<FarmSeedState>();
+        _farmWaterState = gameObject.AddComponent<FarmWaterState>();
+        _farmRipeState = gameObject.AddComponent<FarmRipeState>();
+        _farmHarvestState = gameObject.AddComponent<FarmHarvestState>();
 
-    //    //set default state
-    //    _moveStateContext.Transition(_moveRightState);
-    //}
+        //set default state
+        _farmStateContext.Transition(_farmHarvestState);
+    }
 
-    ////change to move up animation
-    //public void MoveUpAnimation()
-    //{
-    //    _moveStateContext.Transition(_moveUpState);
-    //}
+    //change to Seed State
+    public void FarmSeed()
+    {
+        _farmStateContext.Transition(_farmSeedState);
+    }
 
-    ////change to move down animation
-    //public void MoveDownAnimation()
-    //{
-    //    _moveStateContext.Transition(_moveDownState);
-    //}
+    //change to Water State
+    public void FarmWater()
+    {
+        _farmStateContext.Transition(_farmWaterState);
+    }
 
-    ////change to move left animation
-    //public void MoveLeftAnimation()
-    //{
-    //    _moveStateContext.Transition(_moveLeftState);
-    //}
+    //change to Ripe State
+    public void FarmRipe()
+    {
+        _farmStateContext.Transition(_farmRipeState);
+    }
 
-    ////change to move right animation
-    //public void MoveRightAnimation()
-    //{
-    //    _moveStateContext.Transition(_moveRightState);
-    //}
+    //change to Harvest State
+    public void FarmHarvest()
+    {
+        _farmStateContext.Transition(_farmHarvestState);
+    }
 }
