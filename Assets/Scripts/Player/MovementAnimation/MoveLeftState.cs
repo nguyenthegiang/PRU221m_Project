@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// [State Design Pattern]
+/// [State Deisgn Pattern: Main Character Movement]
 /// 1 state of a movement
 /// </summary>
 public class MoveLeftState : MonoBehaviour, IMoveState

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// [State Design Pattern - Client]
+/// [State Deisgn Pattern - Client: Main Character Movement]
 /// [Command Pattern]
 /// Define Movement of Main Character
 /// </summary>

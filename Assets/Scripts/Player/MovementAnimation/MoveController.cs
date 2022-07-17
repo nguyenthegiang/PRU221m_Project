@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// [State Design Pattern]
+/// [State Deisgn Pattern: Main Character Movement]
 /// Controlling all the states using Context
 /// </summary>
 public class MoveController : MonoBehaviour
