@@ -5,7 +5,7 @@ using UnityEngine;
 
 /// <summary>
 /// [Object Pool Pattern - PooledObject]
-/// 1 drop of rain water
+/// 1 drop of rain water: fall for 2 seconds then get destroyed
 /// </summary>
 public class RainDrop : MonoBehaviour
 {
