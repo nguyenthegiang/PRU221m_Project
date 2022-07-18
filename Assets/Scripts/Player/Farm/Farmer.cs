@@ -14,6 +14,8 @@ using UnityEngine;
 ///     - When user buys a new Seed => Enqueue
 ///     - When user plant a Seed => Dequeue
 ///     => Always use the oldest Seed to plant
+///     
+/// [File I/O] - Client: using JsonHandler to work with File
 /// </summary>
 public class Farmer : MonoBehaviour
 {
@@ -26,6 +28,30 @@ public class Farmer : MonoBehaviour
 
     //A Queue that contains all the Seeds that User has
     public Queue<Plant> seeds = new Queue<Plant>();
+
+    private void Awake()
+    {
+        //Read data from File (if there is)
+        try
+        {
+            JsonHandler handler = gameObject.GetComponent<JsonHandler>();
+            handler.Load();
+
+            //if data empty => do nothing (
+            //if apply this data will make user unable to play)
+            if (handler.data.Money <= 0 && handler.data.seeds.Count <= 0)
+            {
+                throw new Exception();
+            }
+
+            //apply data read from file
+            Money = handler.data.Money;
+            seeds = handler.data.seeds;
+        } catch (Exception)
+        {
+            //file not exist => do nothing
+        }
+    }
 
     void Start()
     {
@@ -50,12 +76,13 @@ public class Farmer : MonoBehaviour
             try
             {
                 actionFarmPlot.FarmSeed(seeds.Dequeue());
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 //alert: if there are no Seed in Queue
                 print("Don't have any Seed to Farm");
             }
-            
+
         }
         //Farm Water
         else if (Input.GetKeyUp(KeyCode.K))
@@ -82,7 +109,8 @@ public class Farmer : MonoBehaviour
             {
                 //alert
                 print("Not enough money!");
-            } else
+            }
+            else
             {
                 //Add seed to Queue
                 seeds.Enqueue(Plant.Carrot);

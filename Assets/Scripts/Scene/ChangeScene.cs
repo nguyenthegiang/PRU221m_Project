@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// [File I/O]: Client using JsonHandler to work with File
+/// [File I/O] - Client: using JsonHandler to work with File
 /// Handle scene changing by Buttons
 /// </summary>
 public class ChangeScene : MonoBehaviour
