@@ -53,7 +53,7 @@ public class JsonHandler : MonoBehaviour
             }
         } else
         {
-            Debug.LogWarning("File not found");
+            //Debug.LogWarning("File not found");
             //throw exception to handle
             throw new System.Exception("File not found");
         }

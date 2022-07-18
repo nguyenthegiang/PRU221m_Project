@@ -46,7 +46,7 @@ public class Farmer : MonoBehaviour
 
             //apply data read from file
             Money = handler.data.Money;
-            seeds = handler.data.seeds;
+            //seeds = handler.data.seeds;
         } catch (Exception)
         {
             //file not exist => do nothing
