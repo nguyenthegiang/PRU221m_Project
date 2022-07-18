@@ -20,9 +20,13 @@ FarmVille - FVille
 
 ### State Design Pattern:
  - Animation Transition of Main Character
+ - Farm: Different states of Farm Plot (seed, water, ripe, harvest)
+ 
+### Object Pool Pattern:
+ - Rain drop creation
 
 ## Algorithms:
-### Shortest Path Algorithm:
+### Dijkstra Shortest Path Algorithm:
  - Move Main Character by Mouse click
  - Algorithmic Complexity: O(v^2)
  
@@ -32,6 +36,12 @@ FarmVille - FVille
  
 ### Sorted Linked List:
  - Used in Shortest Path Algorithm
+ 
+### Queue:
+ - List of Seeds that user buys and uses
+ 
+## File I/O:
+ - Store user data to File: Money
 
 ## Other:
  - Map: Tilemap
