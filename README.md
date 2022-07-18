@@ -1,15 +1,3 @@
-# For Developer
-Các bước cần làm khi Code 1 Pattern/Algorithm/Data Structure cho Game:
- - Comment đầy đủ khi Code
- - Class nào thuộc về / sử dụng Pattern/Algorithm/Data Structure nào thì Comment tên Pattern đó lên đầu Class
- - Update Notes.docx: chuyển màu chữ Pattern/Algorithm/Data Structure sang màu xám sau khi hoàn thành Pattern đó
- - Update Process.docx: ghi rõ nội dung việc sử dụng Pattern/Algorithm/Data Structure đó:
-   + Tên Pattern/Algorithm/Data Structure, tên người làm, tính năng được sử dụng Pattern/Algorithm/Data Structure
-   + Nội dung chi tiết việt sử dụng Pattern/Algorithm/Data Structure như thế nào
- - Update README: liệt kê Pattern/Algorithm/Data Structure ra ở phần bên dưới
- 
- ######################################################################################
-
 # PRU221m_Project
 FarmVille - FVille
 
