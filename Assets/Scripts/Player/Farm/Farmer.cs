@@ -25,7 +25,7 @@ public class Farmer : MonoBehaviour
     public int Money = 50;
 
     //A Queue that contains all the Seeds that User has
-    Queue<Plant> seeds = new Queue<Plant>();
+    public Queue<Plant> seeds = new Queue<Plant>();
 
     void Start()
     {
