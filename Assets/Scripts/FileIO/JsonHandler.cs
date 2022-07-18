@@ -11,14 +11,16 @@ public class JsonHandler : MonoBehaviour
 {
     public UserData data;
 
-    private string file = "savedPosition.txt";
+    private string file = "savedUserData.txt";
 
+    //(Public) Write data to File
     public void Save()
     {
         string json = JsonUtility.ToJson(data);
         WriteToFile(file, json);
     }
 
+    //(Public) Read data from File
     public void Load()
     {
         data = new UserData();
@@ -26,6 +28,7 @@ public class JsonHandler : MonoBehaviour
         JsonUtility.FromJsonOverwrite(json, data);
     }
 
+    //(Internal) Write data to File
     private void WriteToFile(string fileName, string json)
     {
         string path = GetFilePath(fileName);
@@ -37,6 +40,7 @@ public class JsonHandler : MonoBehaviour
         }
     }
 
+    //(Internal) Read data from File
     private string ReadFromFile(string fileName)
     {
         string path = GetFilePath(fileName);
@@ -55,6 +59,7 @@ public class JsonHandler : MonoBehaviour
         }
     }
 
+    //(Internal) get file link
     private string GetFilePath(string fileName)
     {
         return Application.persistentDataPath + "/" + fileName;
